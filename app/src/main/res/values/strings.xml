@@ -9,4 +9,13 @@
     <string name="chocolate">Chocolate</string>
     <string name="morango">Morango</string>
     <string name="creme">Creme</string>
+    <string name="nav_sabores">Sabores</string>
+    <string name="nav_forum">Forum</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_mensagem">Mensagem</string>
+    <string name="nav_localizacao">Localização</string>
+    <string name="nav_configuracao">Configuração</string>
+    <string name="nav_abrir">Abrir</string>
+    <string name="nav_fechar">Fechar</string>
+    <string name="nav_sair">Sair</string>
 </resources>

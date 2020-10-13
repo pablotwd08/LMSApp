@@ -9,12 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CremeActivity"></activity>
+        <activity android:name=".localizacaoActivity"
+            android:theme="@style/AppTheme.Toolbar"></activity>
+        <activity android:name=".chatActivity"
+            android:theme="@style/AppTheme.Toolbar"/>
+        <activity android:name=".forumActivity"
+            android:theme="@style/AppTheme.Toolbar"/>
+        <activity android:name=".CremeActivity" />
         <activity android:name=".MorangoActivity" />
         <activity android:name=".ChocolateActivity" />
-        <activity android:name=".ConfiguracaoActivity" />
+        <activity android:name=".ConfiguracaoActivity"
+            android:theme="@style/AppTheme.Toolbar"/>
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".TelaInicialActicity" />
+        <activity android:name=".TelaInicialActicity"
+            android:theme="@style/AppTheme.Toolbar" />
         <activity android:name=".DebugActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
