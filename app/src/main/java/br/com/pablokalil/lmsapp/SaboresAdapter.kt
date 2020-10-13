@@ -8,6 +8,7 @@ class SaboresAdapter(
     val onClick: (Sabor) -> Unit
 ) {
 
+
     class SaboresViewHolder(view: View): RecyclerView.ViewHolder(view){
     }
 
