@@ -8,7 +8,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_tela_inicial_acticity.*
 import kotlinx.android.synthetic.main.navigation_menu.*
@@ -18,6 +21,7 @@ class TelaInicialActicity : DebugActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial_acticity)
+
 
         this.generic_layout = layoutMenuLateral
 
@@ -32,21 +36,37 @@ class TelaInicialActicity : DebugActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         configuraMenuLateral()
 
-        buttonChocolate.setOnClickListener {
-            var intent = Intent(this, ChocolateActivity::class.java)
-            var params = Bundle()
-            startActivity(intent)
-        }
-        buttonMorango.setOnClickListener {
-            var intent = Intent(this, MorangoActivity::class.java)
-            var params = Bundle()
-            startActivity(intent)
-        }
-        buttonCreme.setOnClickListener {
-            var intent = Intent(this, CremeActivity::class.java)
-            var params = Bundle()
-            startActivity(intent)
-        }
+
+        recyclerSabores?.layoutManager = LinearLayoutManager(this)
+        recyclerSabores?.itemAnimator = DefaultItemAnimator()
+        recyclerSabores?.setHasFixedSize(true)
+        val professor = Prefs.getString("professor")
+        Toast.makeText(this, professor, Toast.LENGTH_LONG).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        taksSabores()
+    }
+
+    var sabores = listOf<Sabor>()
+
+    fun taksSabores() {
+        Thread {
+            this.sabores = SaboresService.getSabores()
+            runOnUiThread {
+                recyclerSabores?.adapter =
+                    SaboresAdapter(sabores) {
+                        onClickSabor(it)
+                    }
+            }
+        }.start()
+    }
+
+    fun onClickSabor(sabor: Sabor) {
+        val it = Intent(this, SaborActivity::class.java)
+        it.putExtra("sabor", sabor)
+        startActivity(it)
     }
 
 
@@ -62,16 +82,16 @@ class TelaInicialActicity : DebugActivity() {
             Toast.makeText(this, "Botão de pesquisa", Toast.LENGTH_LONG).show()
         } else if (id == R.id.action_atualizar) {
             Toast.makeText(this, "Botão de atualizar", Toast.LENGTH_LONG).show()
-        } else if (id == R.id.action_adicionar) {
-            var intent = Intent(this, CadastroActivity::class.java)
-            var params = Bundle()
-                startActivity(intent)
-        } else if (id == R.id.action_config) {
+        }  else if (id == R.id.action_config) {
             var intent = Intent(this, ConfiguracaoActivity::class.java)
             var params = Bundle()
                 startActivity(intent)
         } else if (id == R.id.action_sair) {
             finish()
+        } else if (id == R.id.action_nova) {
+            var intent = Intent(this, NovoSaborActivity::class.java)
+            var params = Bundle()
+            startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
     }

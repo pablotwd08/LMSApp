@@ -1,18 +1,35 @@
 package br.com.pablokalil.lmsapp
 
+import android.content.Context
+import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
+import java.net.URL
+
 object SaboresService {
 
-    fun getSabores() : List<Sabor> {
-        val sabores = mutableListOf<Sabor>()
+    val host = "https://fesousa.pythonanywhere.com"
+    val TAG = "WS_LMSApp"
 
-        for (i in 1..10) {
-            val d = Sabor()
-            d.nome = "Sabor $i"
-            d.zero = "Zero $i"
-            d.marca = "Marca $i"
-            d.foto = "https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2019/08/android-10-google.jpg"
-            sabores.add(d)
-        }
-        return sabores
+    fun getSabores (): List<Sabor> {
+
+     //   val url = "$host/disciplinas"
+    //    val json = HttpHelper.get(url)
+     //   Log.d(TAG, json)
+//
+      //  return parserJson<List<Sabor>>(json)
+        return DatabaseManager.getSaborDAO().findAll()
+    }
+
+    fun saveSabor(sabor: Sabor) {
+ //       val json = GsonBuilder().create().toJson(sabor)
+ //       HttpHelper.post("$host/disciplinas", json)
+        DatabaseManager.getSaborDAO().insert(sabor)
+    }
+
+    inline fun <reified T> parserJson(json: String): T {
+        val type = object: TypeToken<T>(){}.type
+        return Gson().fromJson<T>(json, type)
     }
 }

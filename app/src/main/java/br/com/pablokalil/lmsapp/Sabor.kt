@@ -1,10 +1,16 @@
 package br.com.pablokalil.lmsapp
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.io.Serializable
 
-class Sabor {
-    var id: Long =0
+@Entity(tableName="sabor")
+class Sabor: Serializable {
+
+    @PrimaryKey
+    var id: Long = 0
     var nome = ""
-    var zero = ""
+    var zero= ""
     var marca = ""
     var foto = ""
 

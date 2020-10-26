@@ -18,32 +18,18 @@
 
         <include layout="@layout/toolbar" />
 
-        <Button
-            android:id="@+id/buttonChocolate"
-            android:layout_width="205dp"
-            android:layout_height="58dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:backgroundTint="#8FCDEA"
-            android:text="@string/chocolate" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/buttonMorango"
-            android:layout_width="205dp"
-            android:layout_height="58dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:backgroundTint="#8FCDEA"
-            android:text="@string/morango" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerSabores"
+                android:scrollbars="vertical"
+                android:scrollbarStyle="outsideOverlay" />
 
-        <Button
-            android:id="@+id/buttonCreme"
-            android:layout_width="205dp"
-            android:layout_height="58dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:backgroundTint="#8FCDEA"
-            android:text="@string/creme" />
+            </ScrollView>
 
     </LinearLayout>
 

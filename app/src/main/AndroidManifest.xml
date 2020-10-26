@@ -2,26 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.pablokalil.lmsapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".LMSApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".localizacaoActivity"
-            android:theme="@style/AppTheme.Toolbar"></activity>
-        <activity android:name=".chatActivity"
-            android:theme="@style/AppTheme.Toolbar"/>
-        <activity android:name=".forumActivity"
-            android:theme="@style/AppTheme.Toolbar"/>
+        <activity android:name=".NovoSaborActivity"></activity>
+        <activity android:name=".SaborActivity" />
+        <activity
+            android:name=".localizacaoActivity"
+            android:theme="@style/AppTheme.Toolbar" />
+        <activity
+            android:name=".chatActivity"
+            android:theme="@style/AppTheme.Toolbar" />
+        <activity
+            android:name=".forumActivity"
+            android:theme="@style/AppTheme.Toolbar" />
         <activity android:name=".CremeActivity" />
         <activity android:name=".MorangoActivity" />
         <activity android:name=".ChocolateActivity" />
-        <activity android:name=".ConfiguracaoActivity"
-            android:theme="@style/AppTheme.Toolbar"/>
+        <activity
+            android:name=".ConfiguracaoActivity"
+            android:theme="@style/AppTheme.Toolbar" />
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".TelaInicialActicity"
+        <activity
+            android:name=".TelaInicialActicity"
             android:theme="@style/AppTheme.Toolbar" />
         <activity android:name=".DebugActivity" />
         <activity android:name=".MainActivity">
