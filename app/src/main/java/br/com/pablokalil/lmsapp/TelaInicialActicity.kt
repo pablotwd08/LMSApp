@@ -59,8 +59,16 @@ class TelaInicialActicity : DebugActivity() {
                     SaboresAdapter(sabores) {
                         onClickSabor(it)
                     }
+                enviaNotificacao(this.sabores[0])
             }
         }.start()
+    }
+
+    fun enviaNotificacao(sabor: Sabor) {
+        val intent = Intent(this, SaborActivity::class.java)
+        intent.putExtra("sabor", sabor)
+
+        NotficationUtil.create(1, intent, "LMSApp", "Ops Esse sorvete acabou ${sabor.nome}")
     }
 
     fun onClickSabor(sabor: Sabor) {

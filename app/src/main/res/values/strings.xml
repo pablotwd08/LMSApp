@@ -19,4 +19,8 @@
     <string name="nav_fechar">Fechar</string>
     <string name="nav_sair">Sair</string>
     <string name="action_nova">Novo Sabor</string>
+
+    <string name="API_KEY">AIzaSyBm9xZz7rCgtP0xmx5I3FKci-0mP9cBBro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

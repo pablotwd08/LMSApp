@@ -59,7 +59,7 @@ open class DebugActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
                 startActivity(intent)
             }
             R.id.nav_localizacao -> {
-                var intent = Intent(this, localizacaoActivity::class.java)
+                var intent = Intent(this, MapasActivity::class.java)
                 var params = Bundle()
                 startActivity(intent)
             }

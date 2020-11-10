@@ -1,0 +1,40 @@
+ {
+  "project_info": {
+    "project_number": "395054409045",
+    "firebase_url": "https://lmsapp-64764.firebaseio.com",
+    "project_id": "lmsapp-64764",
+    "storage_bucket": "lmsapp-64764.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395054409045:android:b38695b134c2af95e2fbdc",
+        "android_client_info": {
+          "package_name": "br.com.pablokalil.lmsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395054409045-6n28psm0qajfp5r0lamfqcrmk1rbut43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8NpCG1GZFjDlKTCj_r6afPfXDT6XznEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395054409045-6n28psm0qajfp5r0lamfqcrmk1rbut43.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
